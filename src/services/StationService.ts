@@ -6,8 +6,12 @@ export class StationService extends Api<StationModel> {
         return "station"
     }
 
+    protected modelFromJson(json: any): StationModel {
+        return new StationModel().fromJson(json)
+    }
+
     public async getStation(token: string): Promise<null | StationModel> {
-        const result = await this.get(token, (json) => new StationModel().fromJson(json))
+        const result = await this.get(token)
 
         if (result === null) {
             return null;

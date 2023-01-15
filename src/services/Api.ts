@@ -5,7 +5,9 @@ export abstract class Api<T extends FromJson<T>> {
 
     protected abstract get url(): string
 
-    protected async get(route: string, toModel: (json: any) => T): Promise<null | T[]> {
+    protected abstract modelFromJson(json: any): T
+
+    protected async get(route: string): Promise<null | T[]> {
         const url = `${this.rootUrl}/${this.url}/${route}`
         const res = await fetch(url)
 
@@ -18,10 +20,10 @@ export abstract class Api<T extends FromJson<T>> {
         let result: T[] = []
         if (Symbol.iterator in json) {
             for (const entry of json) {
-                result.push(toModel(entry))
+                result.push(this.modelFromJson(entry))
             }
         } else {
-            result.push(toModel(json))
+            result.push(this.modelFromJson(json))
         }
 
         return result
