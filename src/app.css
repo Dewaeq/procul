@@ -3,6 +3,14 @@
     color: #213547;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,13 +18,6 @@ body {
     width: 100%;
     min-width: 320px;
     min-height: 100vh;
-}
-
-#app {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    box-sizing: border-box;
 }
 
 main {

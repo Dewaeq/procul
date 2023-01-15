@@ -12,7 +12,7 @@ export class ReadingModel extends FromJson<ReadingModel> {
     fromJson(json: any): ReadingModel {
         let model = new ReadingModel()
 
-        model.date = new Date(json.date * 1000)
+        model.date = new Date(json.date)
         model.temperature = json.temperature
         model.humidity = json.humidity
         model.pm10 = json.pm10

@@ -14,7 +14,7 @@ export class StationModel extends FromJson<StationModel> {
         model.token = json.token
         model.hw_version = json.hw_version
         model.sw_version = json.sw_version
-        model.last_online = new Date(json.last_online * 1000)
+        model.last_online = new Date(json.last_online)
         model.location = new LocationModel().fromJson(json.location)
 
         return model

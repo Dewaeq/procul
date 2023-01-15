@@ -16,10 +16,13 @@
 </header>
 
 <style>
+    header {
+        width: 100%;
+    }
+
     .navbar {
         color: white;
         background-color: #21252b;
-        width: 100vw;
         height: 6vh;
         display: flex;
         justify-content: space-between;
