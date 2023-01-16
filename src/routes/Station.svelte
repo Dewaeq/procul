@@ -33,7 +33,7 @@
         groupedReadings = groupReadingsByTime(readings, groupSize);
         setChartData();
     };
-    
+
     const setChartData = () => {
         pmChartData = {
             labels: groupedReadings!.map((r) => r.date.toLocaleString()),

@@ -9,6 +9,17 @@ export class ReadingModel extends FromJson<ReadingModel> {
     co2: number
     voc: number
 
+    constructor() {
+        super()
+        this.date = new Date()
+        this.temperature = 0
+        this.humidity = 0
+        this.pm10 = 0
+        this.pm25 = 0
+        this.co2 = 0
+        this.voc = 0
+    }
+
     fromJson(json: any): ReadingModel {
         let model = new ReadingModel()
 
