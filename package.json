@@ -12,17 +12,19 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "@tsconfig/svelte": "^3.0.0",
+    "leaflet": "^1.9.3",
     "svelte": "^3.52.0",
     "svelte-check": "^2.9.2",
+    "svelte-leafletjs": "^0.10.0",
     "svelte-preprocess": "^4.10.7",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
-    "vite": "^3.2.0"
+    "vite": "^3.2.0",
+    "@types/chart.js": "^2.9.37",
+    "@types/svelte-leafletjs": "^0.8.2",
+    "chart.js": "^4.1.2",
+    "svelte-navigator": "^3.2.2"
   },
   "dependencies": {
-    "@types/chart.js": "^2.9.37",
-    "chart.js": "^4.1.2",
-    "snarkdown": "^2.0.0",
-    "svelte-navigator": "^3.2.2"
   }
 }

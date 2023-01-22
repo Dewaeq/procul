@@ -1,3 +1,4 @@
+import { LatLng } from "leaflet"
 import { FromJson } from "../services/Api"
 
 export class LocationModel extends FromJson<LocationModel> {
@@ -24,5 +25,9 @@ export class LocationModel extends FromJson<LocationModel> {
 
 
         return model
+    }
+
+    getLatLng(): LatLng {
+        return new LatLng(this.latitude, this.longitude)
     }
 }

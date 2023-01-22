@@ -20,6 +20,11 @@ export class StationService extends Api<StationModel> {
         return result[0]
     }
 
+    public async getActiveStations(): Promise<StationModel[]> {
+        const result = await this.get("all/active")
+        return result ?? []
+    }
+
     public async registerStation(data: any): Promise<boolean> {
         const res = await this.put(`${data.token}/register`, data)
         return res.ok
