@@ -29,4 +29,19 @@ export class StationService extends Api<StationModel> {
         const res = await this.put(`${data.token}/register`, data)
         return res.ok
     }
+
+    public getStationColour(station: StationModel): string {
+        let pm = station.last_reading?.pm10;
+        if (!pm) {
+            return "grey"
+        }
+
+        if (pm <= 10) {
+            return "green"
+        } else if (pm <= 30) {
+            return "orange"
+        } else {
+            return "red"
+        }
+    }
 }
