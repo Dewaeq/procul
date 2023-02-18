@@ -22,7 +22,11 @@
     let groupSize: number = 10;
 
     onMount(async () => {
-        readings = await readingApi.getLatest(token, 0, 30);
+        const to = new Date();
+        const from = new Date();
+        from.setDate(to.getDate() - 31);
+
+        readings = await readingApi.getBetween(token, from, to);
         if (!readings) return;
 
         groupReadings();
